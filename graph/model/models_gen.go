@@ -2,19 +2,27 @@
 
 package model
 
-type NewTodo struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
+type Category struct {
+	ID          string    `json:"id"`
+	Name        string    `json:"name"`
+	Description *string   `json:"description"`
+	Movies      []*Movies `json:"movies"`
 }
 
-type Todo struct {
-	ID   string `json:"id"`
-	Text string `json:"text"`
-	Done bool   `json:"done"`
-	User *User  `json:"user"`
+type Movies struct {
+	ID          string    `json:"id"`
+	Name        string    `json:"name"`
+	Description *string   `json:"description"`
+	Category    *Category `json:"category"`
 }
 
-type User struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+type NewCategory struct {
+	Name        string  `json:"name"`
+	Description *string `json:"description"`
+}
+
+type NewMovie struct {
+	Name        string  `json:"name"`
+	Description *string `json:"description"`
+	CategoryID  string  `json:"categoryId"`
 }
