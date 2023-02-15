@@ -8,4 +8,5 @@ import "github.com/Sotnasjeff/movie-category-manager-graphql/internal/db"
 
 type Resolver struct {
 	CategoryDB *db.Category
+	MovieDB    *db.Movie
 }
